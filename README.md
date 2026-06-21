@@ -1,6 +1,6 @@
 # Y Search — SIR 2002 Electoral Roll Portal
 
-> **Live demo**: [https://y-search.vercel.app](https://y-search.vercel.app) (deploy your own — see below)
+> **Status**: Local-only (see "Why Not Deployed?" below)
 
 ## Why This Project?
 
@@ -90,14 +90,27 @@ npm run dev
 # Open http://localhost:3000
 ```
 
-### To deploy on Vercel
+### Why Not Deployed to Cloud?
+
+The govt source site (`ceoaperolls.ap.gov.in`) blocks all cloud server IP ranges — Vercel (AWS), Cloudflare Workers, everything. Only **your home internet connection** can reach it.
+
+**Simple example:** Imagine the govt site is a house that only opens its door for neighbors in your area. Cloud servers are like people calling from different cities — they get rejected. Your home PC lives in the neighborhood, so it can walk right in. The app must run from your PC because only your home connection has the "right address."
+
+### To Use
+
+Run on your PC, then access from any device on the same WiFi:
 
 ```bash
-npm install -g vercel
-vercel
+cd frontend
+npm install
+npm run dev
+# Open http://localhost:3000 in your browser
 ```
 
-No environment variables needed — the app is fully self-contained.
+Find your PC's local IP (`ipconfig` → look for "IPv4 Address"), share with family:
+```
+http://192.168.x.x:3000
+```
 
 ## Project Structure
 
